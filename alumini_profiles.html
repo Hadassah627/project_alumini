@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Profiles</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for Connect Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #101820;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ff6f61;
+        }
+
+        footer {
+            background-color: #101820;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        footer a {
+            color: #63e6d4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff6f61;
+        }
+
+        .content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .profile-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card img {
+            width: 100%;
+            max-width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .profile-details {
+            flex: 1;
+        }
+
+        .profile-details h5 {
+            margin: 0;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+        }
+
+        .profile-details .connect-btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<script>
+    function logout() {
+        alert("You have been successfully logged out!");
+        window.location.href = "landing_page.html"; 
+    }
+    function reg()
+    {
+        window.location.href="registration.html";
+    }
+    function profiles()
+    {
+        window.location.href="alumini_profiles.html";
+    }
+    function about()
+    {
+        window.location.href="about_the_page.html";
+    }
+</script>
+<body>
+
+<header>
+    <h1>Alumni Profiles</h1>
+    <nav>
+        <a>Home</a>
+        <a href="#" onclick="reg()">Registration</a>
+        <a href="#" onclick="profiles()">Profiles</a>
+        <a href="#" onclick="about()">About The Page</a>
+        <a href="#" onclick="logout()">Logout</a>
+
+    </nav>
+</header>
+
+<div class="container my-5">
+    <div class="search-bar">
+        <input type="text" id="searchBar" placeholder="Search by name, branch, or company" onkeyup="filterProfiles()">
+    </div>
+
+    <div id="profilesContainer">
+        <!-- Profile 1 -->
+        <div class="profile-card" data-name="John Doe" data-branch="CSE" data-company="Google">
+            <img src="/home/rgukt/Downloads/human2.jpg" alt="John Doe">
+            <div class="profile-details">
+                <h5>John Doe</h5>
+                <p><strong>Passed Out:</strong> 2020</p>
+                <p><strong>Working At:</strong> Google</p>
+                <p><strong>Branch:</strong> CSE</p>
+                <p><strong>Location:</strong> California, USA</p>
+                <button class="btn btn-outline-primary connect-btn">
+                    <i class="fas fa-handshake"></i> Connect
+                </button>
+            </div>
+        </div>
+
+        <!-- Profile 2 -->
+        <div class="profile-card" data-name="Priya Sharma" data-branch="ECE" data-company="Microsoft">
+            <img src="/home/rgukt/Downloads/human.jpeg" alt="Priya Sharma">
+            <div class="profile-details">
+                <h5>Priya Sharma</h5>
+                <p><strong>Passed Out:</strong> 2019</p>
+                <p><strong>Working At:</strong> Microsoft</p>
+                <p><strong>Branch:</strong> ECE</p>
+                <p><strong>Location:</strong> Hyderabad, India</p>
+                <button class="btn btn-outline-primary connect-btn">
+                    <i class="fas fa-handshake"></i> Connect
+                </button>
+            </div>
+        </div>
+
+        <!-- Profile 3 -->
+        <div class="profile-card" data-name="Amit Verma" data-branch="IT" data-company="Infosys">
+            <img src="/home/rgukt/Downloads/human2.jpg" alt="Amit Verma">
+            <div class="profile-details">
+                <h5>Amit Verma</h5>
+                <p><strong>Passed Out:</strong> 2021</p>
+                <p><strong>Working At:</strong> Infosys</p>
+                <p><strong>Branch:</strong> IT</p>
+                <p><strong>Location:</strong> Pune, India</p>
+                <button class="btn btn-outline-primary connect-btn">
+                    <i class="fas fa-handshake"></i> Connect
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Alumni Connect. All rights reserved. Follow us on 
+        <a href="#">Facebook</a>, 
+        <a href="#">Twitter</a>, 
+        <a href="#">LinkedIn</a>
+    </p>
+</footer>
+
+<script>
+    function logout() {
+        alert("You have been successfully logged out!");
+        window.location.href = "landing_page.html"; 
+    }
+
+    function filterProfiles() {
+        let input = document.getElementById('searchBar').value.toLowerCase();
+        let profiles = document.getElementsByClassName('profile-card');
+
+        Array.from(profiles).forEach(profile => {
+            let name = profile.getAttribute('data-name').toLowerCase();
+            let branch = profile.getAttribute('data-branch').toLowerCase();
+            let company = profile.getAttribute('data-company').toLowerCase();
+
+            if (name.includes(input) || branch.includes(input) || company.includes(input)) {
+                profile.style.display = '';
+            } else {
+                profile.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
