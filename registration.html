@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+
+    <style>
+        header {
+            background-color: #101820;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ff6f61;
+        }
+
+        footer {
+            background-color: #101820;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        footer a {
+            color: #63e6d4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff6f61;
+        }
+
+        .container {
+            padding-top: 100px; /* for fixed header */
+            padding-bottom: 60px; /* for fixed footer */
+        }
+    </style>
+</head>
+<script>
+    function logout() {
+        alert("You have been successfully logged out!");
+        window.location.href = "landing_page.html"; 
+    }
+    function reg()
+    {
+        window.location.href="registration.html";
+    }
+    function profiles()
+    {
+        window.location.href="alumini_profiles.html";
+    }
+    function about()
+    {
+        window.location.href="about_the_page.html";
+    }
+</script>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Alumini Connect</h1>
+        <nav>
+            <a>Home</a>
+            <a href="#" onclick="reg()">Registration</a>
+            <a href="#" onclick="profiles()">Profiles</a>
+            <a href="#" onclick="about()">About The Page</a>
+            <a href="#" onclick="logout()">Logout</a>
+
+        </nav>
+    </header>
+
+    <!-- FORM CONTENT -->
+    <div class="container">
+        <center>
+            <form action="values.php" method="post" enctype="multipart/form-data">
+                <div class="form-box glow-effect">
+                    <h2>Registration Page</h2><b>
+
+                    <div class="input-box form-group">
+                        <label for="name">Name :</label>
+                        <input type="text" class="input-feild" id="name" name="name" placeholder="Username" required autofocus>
+                        <i class="bx bx-user icon"></i>
+                    </div>
+
+                    <div class="input-box form-group">
+                        <label for="branch">Branch :</label>
+                        <input type="text" class="input-feild" id="branch" name="branch" placeholder="Enter Branch" required>
+                        <i class='bx bx-category icon'></i>
+                    </div>
+
+                    <div class="input-box form-group">
+                        <label for="year">Year of Passed Out :</label>
+                        <input type="text" class="input-feild" id="year" name="year" placeholder="Enter Passed out Year" required>
+                        <i class='bx bx-calendar-event icon'></i>
+                    </div>
+
+                    <div class="input-box form-group">
+                        <label for="qua">Qualification :</label>
+                        <input type="text" class="input-feild" id="qua" name="qualification" placeholder="Enter Qualification" required>
+                        <i class='bx bx-certification icon'></i>
+                    </div>
+
+                    <div class="input-box form-group">
+                        <label for="des">Designation :</label>
+                        <input type="text" class="input-feild" id="des" name="designation" placeholder="Enter Designation" required>
+                        <i class='bx bx-briefcase icon'></i>
+                    </div>
+
+                    <div class="input-box form-group">
+                        <label for="master">Mastery :</label>
+                        <input type="text" class="input-feild" id="master" name="mastery" placeholder="Master in" required>
+                        <i class='bx bx-book icon'></i>
+                    </div>
+
+                    <div class="input-box form-group">
+                        <label for="mail">Email :</label>
+                        <input type="email" class="input-feild" id="Email" name="email" placeholder="Enter Email" required>
+                        <i class='bx bx-envelope icon'></i>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Register">
+                    </div>
+                    </b>
+                </div>
+            </form>
+        </center>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Alumini Connect. All rights reserved.
+            Follow us on 
+            <a href="#">Facebook</a>, 
+            <a href="#">Twitter</a>, 
+            <a href="#">LinkedIn</a>
+        </p>
+    </footer>
+
+</body>
+</html>
